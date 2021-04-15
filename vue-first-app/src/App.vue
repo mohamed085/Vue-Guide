@@ -53,6 +53,16 @@ export default {
     toggleFavoriteStatus(id) {
       const friend = this.friends.find(friend => friend.id === id)
       friend.favorite = !friend.favorite;
+    },
+    addContact(name, phone, email) {
+      const newFriend = {
+        id: new Date().toString(),
+        name: name,
+        phone: phone,
+        email: email,
+        favorite: false
+      }
+      this.friends.push(newFriend);
     }
   }
 }
