@@ -5,6 +5,12 @@ const app = Vue.createApp({
             name: ''
         };
     },
+    computed: {
+        submit(){
+            console.log("Computed");
+            alert("Submitted");
+        },
+    },
     methods: {
         submitForm(){
           alert("Submitted");
