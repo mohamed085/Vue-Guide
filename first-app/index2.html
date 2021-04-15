@@ -22,10 +22,11 @@
             <button v-on:click="counter--">Reduce</button>
             <button v-on:click="add(5)">Add 5</button>
             <button v-on:click="reduce(5)">Reduce 5</button>
+            <button v-on:click="reset">Reset</button>
             <!-- v-once -> not update value -->
             <p v-once>Result: {{ counter }}</p>
             <p>Result: {{ counter }}</p>
-            <input type="text" v-on:input="setName">
+            <input type="text" v-model="name">
             <p>your name: {{ name }} </p>
             <form v-on:submit="submitForm">
                 <input type="text">
