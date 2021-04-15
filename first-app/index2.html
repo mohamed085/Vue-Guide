@@ -20,7 +20,17 @@
     <h2>Events in Action</h2>
     <button v-on:click="counter++">Add</button>
     <button v-on:click="counter--">Reduce</button>
+
+    <button v-on:click="add(5)">Add 5</button>
+    <button v-on:click="reduce(5)">Reduce 5</button>
+
     <p>Result: {{ counter }}</p>
+
+
+    <input type="text" v-on:input="setName">
+    <p>your name: {{ name }} </p>
+
+
 </section>
 </body>
 </html>
