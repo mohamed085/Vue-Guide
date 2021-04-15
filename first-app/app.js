@@ -1,9 +1,9 @@
 const app = Vue.createApp({
-  data() {
-    return {
-      counter: 0,
-    };
-  },
+    data() {
+        return {
+            course: "Welcome my friend",
+        };
+    },
 });
 
-app.mount('#events');
+app.mount('#user-goal');
