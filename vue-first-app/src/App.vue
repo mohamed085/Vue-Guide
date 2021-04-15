@@ -4,9 +4,16 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <li><FriendContact></FriendContact></li>
-      <li><FriendContact></FriendContact></li>
-    </ul>
+      <friend-contact
+          name="Manuel Lorenz"
+          phone-number="01234 78992"
+          email-address="manuel@localhost.com"
+      ></friend-contact>
+      <friend-contact
+          name="Julie Jones"
+          phone-number="0987 65431"
+          email-address="julie@localhost.com"
+      ></friend-contact>    </ul>
   </section>
 </template>
 
@@ -15,7 +22,9 @@
 import FriendContact from "./components/FriendContact";
 export default {
   name: 'App',
-  components: {FriendContact},
+  components: {
+    FriendContact
+  },
   data() {
     return {
       friends: [
