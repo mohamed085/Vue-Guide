@@ -3,27 +3,29 @@
     <header>
       <h1>My Friends</h1>
     </header>
-    <ul>
-      <friend-contact
-          name="Manuel Lorenz"
-          phone-number="01234 78992"
-          email-address="manuel@localhost.com"
-          is-favorite="true"
-      ></friend-contact>
-      <friend-contact
-          name="Julie Jones"
-          phone-number="0987 65431"
-          email-address="julie@localhost.com"
-      ></friend-contact>
-    </ul>
+<!--    <ul>-->
+<!--      <friend-contact-->
+<!--          name="Manuel Lorenz"-->
+<!--          phone-number="01234 78992"-->
+<!--          email-address="manuel@localhost.com"-->
+<!--          is-favorite="true"-->
+<!--      ></friend-contact>-->
+<!--      <friend-contact-->
+<!--          name="Julie Jones"-->
+<!--          phone-number="0987 65431"-->
+<!--          email-address="julie@localhost.com"-->
+<!--      ></friend-contact>-->
+<!--    </ul>-->
     <ul>
       <FriendContact
         v-for="friend in friends"
         :key="friend.id"
+        :id="friend.id"
         :name="friend.name"
         :phone-number="friend.phone"
         :email-address="friend.email"
         :is-favorite="friend.favorite"
+        @toggle-favorite="toggleFavoriteStatus"
         ></FriendContact>
     </ul>
   </section>
@@ -55,6 +57,12 @@ export default {
           favorite: false
         },
       ]
+    }
+  },
+  methods: {
+    toggleFavoriteStatus(id) {
+      const friend = this.friends.find(friend => friend.id === id)
+      friend.favorite = !friend.favorite;
     }
   }
 }
