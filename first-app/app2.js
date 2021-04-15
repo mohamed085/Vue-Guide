@@ -5,17 +5,22 @@ const app = Vue.createApp({
             name: ''
         };
     },
+    watch: {
+        name() {
+
+        }
+    },
     computed: {
-        submit(){
+        submit() {
             console.log("Computed");
             alert("Submitted");
         },
     },
     methods: {
-        submitForm(){
+        submitForm() {
           alert("Submitted");
         },
-        reset(){
+        reset() {
             this.counter = 0;
         },
         add(num) {
