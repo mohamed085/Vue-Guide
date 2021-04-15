@@ -19,6 +19,11 @@
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p>{{ course }}</p>
+      <p>{{ outputGoal() }}</p>
+
+      <!-- It will not work -->
+<!--      <a href="{{ googleLink }}">Go to google</a>-->
+      <a v-bind:href="googleLink">Go to google</a>
     </section>
   </body>
 </html>
