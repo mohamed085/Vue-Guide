@@ -3,19 +3,7 @@
     <header>
       <h1>My Friends</h1>
     </header>
-<!--    <ul>-->
-<!--      <friend-contact-->
-<!--          name="Manuel Lorenz"-->
-<!--          phone-number="01234 78992"-->
-<!--          email-address="manuel@localhost.com"-->
-<!--          is-favorite="true"-->
-<!--      ></friend-contact>-->
-<!--      <friend-contact-->
-<!--          name="Julie Jones"-->
-<!--          phone-number="0987 65431"-->
-<!--          email-address="julie@localhost.com"-->
-<!--      ></friend-contact>-->
-<!--    </ul>-->
+    <NewFriend @add-contact="addContact"></NewFriend>
     <ul>
       <FriendContact
         v-for="friend in friends"
@@ -34,9 +22,11 @@
 <script>
 
 import FriendContact from "./components/FriendContact";
+import NewFriend from "./components/NewFriend";
 export default {
   name: 'App',
   components: {
+    NewFriend,
     FriendContact
   },
   data() {
@@ -73,7 +63,7 @@ export default {
   box-sizing: border-box;
 }
 html {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 body {
   margin: 0;
@@ -94,7 +84,8 @@ header {
   padding: 0;
   list-style: none;
 }
-#app li {
+#app li,
+#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -123,5 +114,18 @@ header {
   background-color: #ec3169;
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+#app input {
+  font: inherit;
+  padding: 0.15rem;
+}
+#app label {
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 7rem;
+  display: inline-block;
+}
+#app form div {
+  margin: 1rem 0;
 }
 </style>
