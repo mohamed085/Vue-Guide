@@ -15,13 +15,18 @@ const app = Vue.createApp({
     },
     methods: {
         attackMonster() {
-            const myAttackValue = Math.floor(Math.random() * (12 - 5)) + 5;
-            this.monsterHealth -= myAttackValue;
+            const attackValue = Math.floor(Math.random() * (12 - 5)) + 5;
+            this.monsterHealth -= attackValue;
             this.attackPlayer();
         },
         attackPlayer() {
             const attackValue = Math.floor(Math.random() * (15 - 8)) + 8;
             this.playerHealth -= attackValue;
+        },
+        specialAttackMonster() {
+            const attackValue = Math.floor(Math.random() * (10 - 25)) + 25;
+            this.monsterHealth -= attackValue;
+            this.attackPlayer();
         },
     }
 });
