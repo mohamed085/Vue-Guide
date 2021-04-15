@@ -14,12 +14,14 @@
         {{ emailAddress  }}
       </li>
     </ul>
+    <button @click="$emit('delete', id)">Delete</button>
   </li>
 </template>
 
 <script>
 export default {
   name: "FriendContact",
+  emits: ['toggle-favorite', 'delete'],
   props: {
     id: {
       type: String,
@@ -56,6 +58,7 @@ export default {
       // this.friendIsFavorite = !this.friendIsFavorite;
       this.$emit('toggle-favorite', this.id);
     },
+
   },
 }
 </script>
