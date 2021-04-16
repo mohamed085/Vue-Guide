@@ -3,7 +3,7 @@
     <BaseCard>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat">Delete</base-button>
+        <BaseButton mode="flat">Delete</BaseButton>
       </header>
       <p>{{ description }}</p>
       <nav>
@@ -15,8 +15,9 @@
 
 <script>
 import BaseCard from "../UI/BaseCard";
+import BaseButton from "../UI/BaseButton";
 export default {
-  components: {BaseCard},
+  components: {BaseButton, BaseCard},
   props: ['title', 'description', 'link'],
 };
 </script>
