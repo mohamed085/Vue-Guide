@@ -45,7 +45,14 @@ const router = createRouter({
             component: NotFound
         }
     ],
-    linkActiveClass: 'active'
+    linkActiveClass: 'active',
+    scrollBehavior(to, from , savePosition) {
+        console.log(to, from, savePosition)
+        if (savePosition){
+            return savePosition;
+        }
+        return { left: 0, top: 0 }
+    }
 });
 
 app.use(router);
