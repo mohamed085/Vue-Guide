@@ -6,6 +6,8 @@ import TeamsList from "./components/teams/TeamsList";
 import UsersList from "./components/users/UsersList";
 import TeamMembers from "./components/teams/TeamMembers";
 import NotFound from "./components/nav/NotFound";
+import TeamFooter from "./components/teams/TeamFooter";
+import UserFooter from "./components/users/UserFooter";
 
 const app = createApp(App);
 const router = createRouter({
@@ -18,7 +20,10 @@ const router = createRouter({
         {
             name: 'teams',
             path: '/teams',
-            component: TeamsList,
+            components: {
+                default: TeamsList,
+                footer: TeamFooter
+            },
              children: [
                 {
                     name: 'team-members',
@@ -30,7 +35,10 @@ const router = createRouter({
         },
         {
             path: '/users',
-            component: UsersList
+            components: {
+                default: UsersList,
+                footer: UserFooter
+            }
         },
         {
             path: '/:notFound(.*)',
