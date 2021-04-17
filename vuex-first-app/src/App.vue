@@ -19,7 +19,10 @@ export default {
   },
   methods: {
     addOne() {
-      this.$store.commit('increase', { value: 10 });
+      this.$store.commit({
+        type: 'increase',
+        value: 10
+      });
     }
   }
 };
