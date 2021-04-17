@@ -36,7 +36,15 @@
                 return  res.json();
               }
             }).then(data => {
-              console.log(data);
+              const result = [];
+              for (const id in data){
+                result.push({
+                  id: id,
+                  name: data[id].name,
+                  rating: data[id].rating,
+                });
+              }
+              this.results = result;
         });
       }
     }
