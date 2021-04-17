@@ -30,10 +30,13 @@
     },
     methods: {
       loadExperiences() {
-        fetch('https://vue-http-demo-3c99d-default-rtdb.firebaseio.com/surveys.json', {
-          headers: {
-            'Content-Type': 'application/json'
-          },
+        fetch('https://vue-http-demo-3c99d-default-rtdb.firebaseio.com/surveys.json').then(
+            res => {
+              if (res.ok) {
+                return  res.json();
+              }
+            }).then(data => {
+              console.log(data);
         });
       }
     }
