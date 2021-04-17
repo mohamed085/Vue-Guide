@@ -28,6 +28,9 @@
         results: []
       }
     },
+    mounted() {
+      this.loadExperiences();
+    },
     methods: {
       loadExperiences() {
         fetch('https://vue-http-demo-3c99d-default-rtdb.firebaseio.com/surveys.json').then(
