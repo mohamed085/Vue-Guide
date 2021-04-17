@@ -46,6 +46,8 @@
             .then(res => {
               if (res.ok) {
                 return  res.json();
+              } else {
+                this.error = 'Can not save data - Please try again later';
               }
             })
             .then(data => {
