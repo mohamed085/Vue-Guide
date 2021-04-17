@@ -10,8 +10,8 @@ const app = createApp(App);
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', redirect: '/teams' },
-        { path: '/teams', component: TeamsList },
+        // { path: '/', redirect: '/teams' },
+        { path: '/teams', component: TeamsList, alias: '/' },
         { path: '/teams/:teamId', component: TeamMembers , props: true},
         { path: '/users', component: UsersList }
     ],
