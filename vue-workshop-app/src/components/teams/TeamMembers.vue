@@ -17,6 +17,7 @@ import UserItem from '../users/UserItem.vue';
 
 export default {
   inject: ['users', 'teams'],
+  props: ['teamId'],
   components: {
     UserItem,
   },
@@ -40,8 +41,7 @@ export default {
     },
   },
   created() {
-    const teamId = this.$route.params.teamId;
-    this.loadTeamMembers(teamId);
+    this.loadTeamMembers(this.teamId);
   },
 };
 </script>
