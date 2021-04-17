@@ -41,7 +41,13 @@ export default {
     },
   },
   created() {
+    // this.$route.path // /teams/t1
     this.loadTeamMembers(this.teamId);
+  },
+  watch: {
+    teamId(newId) {
+      this.loadTeamMembers(newId);
+    },
   },
 };
 </script>
