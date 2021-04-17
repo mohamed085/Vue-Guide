@@ -47,13 +47,17 @@ const router = createRouter({
     ],
     linkActiveClass: 'active',
     scrollBehavior(to, from , savePosition) {
-        console.log(to, from, savePosition)
         if (savePosition){
             return savePosition;
         }
         return { left: 0, top: 0 }
     }
 });
+
+router.beforeEach((to,from, next) => {
+    console.log("Global beforeEach" + to, from);
+    next('/teams');
+})
 
 app.use(router);
 
